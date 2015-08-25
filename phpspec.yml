@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Potto
+        psr4_prefix: Potto
+        src_path: app

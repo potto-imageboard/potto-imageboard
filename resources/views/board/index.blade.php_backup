@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="@yield('potto_lang', 'en')">
+  <head>
+    <title>Board</title>
+    <link href="/4chan.css" rel="stylesheet">
+    <link href="/4chan-mobile.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+
+      <div class="boardBanner">
+        <h2 class="boardTitle">/{{ $board->name }}/ - {{ $board->description }}</h2>
+        {!! $board->header_content !!}
+      </div>
+
+      <hr />
+
+      <div id="threads">
+        @foreach ($threads as $thread)
+          <div class="thread" id="t-{{$thread->id}}">
+            <div class="postContainer opContainer" id="pc--{{$thread->id}}">
+              <div id="p147545" class="post op">
+                <div class="postInfoM mobile" id="pim147545"><span class="nameBlock"><span class="name">{{ $thread->name }}</span>
+
+                  <br><span class="subject">{{ $thread->subject }}</span> </span><span class="dateTime postNum" data-utc="1396376130">04/01/14(Tue)14:15 <a href="res/147545#p147545">No.</a><a href="res/147545#q147545" title="Quote this post">{{ $thread->post_get }}</a></span>
+
+                </div>
+                <div class="file" id="f147545">
+                    <div class="fileText" id="fT147545">File: <a href="//i.4cdn.org/gd/src/1396376130799.jpg" target="_blank">1396376130799.jpg</a>-(928 KB, 1536x2048, <span>whycantiholdallthesefeels.jpg</span>)</div><a target="_blank" href="//i.4cdn.org/g/1427358313010.jpg" class="fileThumb"><img style="height: 188px; width: 250px;" data-md5="Uv2rK3MYn5TjRkmvBcOWMw==" alt="148 KB" src="//i.4cdn.org/g/1427358313010s.jpg"><div class="mFileInfo mobile" data-tip-cb="mShowFull" data-tip="">148 KB JPG</div></a>
+
+                </div>
+                <div class="postInfo desktop" id="pi147545">
+                    <span class="subject">{{ $thread->subject }}</span>  <span class="nameBlock"><span class="name">{{ $thread->name }}</span> </span> <span class="dateTime" data-utc="1396376130">04/01/14(Tue)14:15</span>  <span class="postNum desktop"><a href="res/147545#p147545" title="Highlight this post">No.</a><a href="res/147545#q147545" title="Quote this post">{{ $thread->post_get }}</a> &nbsp; <span>[<a href="res/147545" class="replylink">Reply</a>]</span></span>
+                </div>
+                <blockquote class="postMessage" id="m147545">{!! $thread->content !!}<br /></blockquote>
+              </div>
+              <div class="postLink mobile"><span class="info"></span><a class="button" href="thread/39894014">View Thread</a></div>
+            </div>
+
+          @foreach ($thread->posts as $post)
+
+          {{ $post }}
+
+
+          @endforeach {{-- $post --}}
+          </div>
+          <hr />
+        @endforeach {{-- $thread --}}
+
+      </div>{{--  #threads --}}
+
+      <div class="thread" id="t47191619">
+        <div class="postContainer opContainer" id="pc47191619">
+          <div id="p47191619" class="post op"><span id="sa47191619"><img alt="H" class="extButton threadHideButton" data-cmd="hide" data-id="47191619" src="//s.4cdn.org/image/buttons/burichan/post_expand_minus.png" title="Hide thread"></span>
+            <div class="postInfoM mobile" id="pim47191619"><span class="nameBlock"><span class="name">Anonymous</span>
+              <br><span class="subject">PANIC</span> </span><span class="dateTime postNum" data-utc="1427302385">03/25/15(Wed)12:53:05 <a href="thread/47191619#p47191619" title="Link to this post">No.</a><a href="thread/47191619#q47191619" title="Reply to this post">47191619</a></span></div>
+            <div class="file" id="f47191619">
+              <div class="fileText" id="fT47191619">File: <a href="//i.4cdn.org/g/1427302385349.png" target="_blank">gentoo.png</a> (626 KB, 612x646)</div>
+              <a class="fileThumb" href="//i.4cdn.org/g/1427302385349.png" target="_blank"><img src="//i.4cdn.org/g/1427302385349s.jpg" alt="626 KB" data-md5="HEBO7PcfqjJTy7ANvh8O4w==" style="height: 250px; width: 236px;">
+                <div data-tip="" data-tip-cb="mShowFull" class="mFileInfo mobile">626 KB PNG</div>
+              </a>
+            </div>
+            <div class="postInfo desktop" id="pi47191619">
+              <input type="checkbox" name="47191619" value="delete"> <span class="subject">PANIC</span> <span class="nameBlock"><span class="name">Anonymous</span> </span> <span class="dateTime" data-utc="1427302385">03/25/15(Wed)18:53:05</span> <span class="postNum desktop"><a href="thread/47191619#p47191619" title="Link to this post">No.</a><a href="thread/47191619#q47191619" title="Reply to this post">47191619</a> &nbsp; <span>[<a href="thread/47191619/panic" class="replylink">Reply</a>]</span></span><a href="#" class="postMenuBtn" title="Post menu" data-cmd="post-menu">▶</a>
+              <div id="bl_47191619" class="backlink"><span><a href="thread/47191619#p47204788" class="quotelink">&gt;&gt;47204788</a> </span></div>
+            </div>
+            <blockquote class="postMessage" id="m47191619"><span class="quote">&gt;A list of RadioShack assets for sale includes more than 65 million customer names and physical addresses, and 13 million email addresses.</span>
+              <br>
+              <br>http://www.pcworld.com/article/2901
+              <wbr>028/radioshack-puts-customers-perso
+              <wbr>nal-data-up-for-sale-in-bankruptcy-
+              <wbr>auction.html
+              <br>
+              <br>Have you ever bought something at Radio Shack, /g/?</blockquote>
+          </div>
+          <div class="postLink mobile"><span class="info">64 Replies / 8 Images</span><a href="thread/47191619" class="button">View Thread</a></div>
+        </div><span class="summary desktop"><img class="extButton expbtn" title="Expand thread" alt="+" data-cmd="expand" data-id="47191619" src="//s.4cdn.org/image/buttons/burichan/post_expand_plus.png"><span class="">59 replies and 8 images omitted. <a href="thread/47191619" class="replylink">Click here</a> to view.</span><span style="display: none;">Showing all replies.</span></span>
+        <div class="postContainer replyContainer" id="pc47204489">
+          <div class="sideArrows" id="sa47204489">&gt;&gt;</div>
+          <div id="p47204489" class="post reply">
+            <div class="postInfoM mobile" id="pim47204489"><span class="nameBlock"><span class="name">Anonymous</span>
+              <br>
+              </span><span class="dateTime postNum" data-utc="1427360093">03/26/15(Thu)04:54:53 <a href="thread/47191619#p47204489" title="Link to this post">No.</a><a href="thread/47191619#q47204489" title="Reply to this post">47204489</a></span></div>
+            <div class="postInfo desktop" id="pi47204489">
+              <input type="checkbox" name="47204489" value="delete"> <span class="nameBlock"><span class="name">Anonymous</span> </span> <span class="dateTime" data-utc="1427360093">03/26/15(Thu)10:54:53</span> <span class="postNum desktop"><a href="thread/47191619#p47204489" title="Link to this post">No.</a><a href="thread/47191619#q47204489" title="Reply to this post">47204489</a></span><a href="#" class="postMenuBtn" title="Post menu" data-cmd="post-menu">▶</a></div>
+            <blockquote class="postMessage" id="m47204489"><a href="/g/thread/47191619#p47204221" class="quotelink">&gt;&gt;47204221</a>
+              <br>I thought they were all going to just shut down and get taken over by a liquidator. I don't know how they operate behind the scenes, but I considered maybe they're closing the stores by profitability and shuffling the remaining inventory around to the others.
+              <br>
+              <br>None of them looked like a franchise store like in this article
+              <br>http://www.wired.com/2010/04/ff_rad
+              <wbr>ioshack/</blockquote>
+          </div>
+        </div>
+        <div class="postContainer replyContainer" id="pc47204504">
+          <div class="sideArrows" id="sa47204504">&gt;&gt;</div>
+          <div id="p47204504" class="post reply">
+            <div class="postInfoM mobile" id="pim47204504"><span class="nameBlock"><span class="name">Anonymous</span>
+              <br>
+              </span><span class="dateTime postNum" data-utc="1427360259">03/26/15(Thu)04:57:39 <a href="thread/47191619#p47204504" title="Link to this post">No.</a><a href="thread/47191619#q47204504" title="Reply to this post">47204504</a></span></div>
+            <div class="postInfo desktop" id="pi47204504">
+              <input type="checkbox" name="47204504" value="delete"> <span class="nameBlock"><span class="name">Anonymous</span> </span> <span class="dateTime" data-utc="1427360259">03/26/15(Thu)10:57:39</span> <span class="postNum desktop"><a href="thread/47191619#p47204504" title="Link to this post">No.</a><a href="thread/47191619#q47204504" title="Reply to this post">47204504</a></span><a href="#" class="postMenuBtn" title="Post menu" data-cmd="post-menu">▶</a></div>
+            <blockquote class="postMessage" id="m47204504"><a href="/g/thread/47191619#p47204269" class="quotelink">&gt;&gt;47204269</a>
+              <br>To send advertising, and I'm sure to also decide where to open new stores. If they notice a lot of customers coming from one ZIP code, then they'll look into opening a new location there.</blockquote>
+          </div>
+        </div>
+        <div class="postContainer replyContainer" id="pc47204641">
+          <div class="sideArrows" id="sa47204641">&gt;&gt;</div>
+          <div id="p47204641" class="post reply">
+            <div class="postInfoM mobile" id="pim47204641"><span class="nameBlock"><span class="name">Anonymous</span>
+              <br>
+              </span><span class="dateTime postNum" data-utc="1427361581">03/26/15(Thu)05:19:41 <a href="thread/47191619#p47204641" title="Link to this post">No.</a><a href="thread/47191619#q47204641" title="Reply to this post">47204641</a></span></div>
+            <div class="postInfo desktop" id="pi47204641">
+              <input type="checkbox" name="47204641" value="delete"> <span class="nameBlock"><span class="name">Anonymous</span> </span> <span class="dateTime" data-utc="1427361581">03/26/15(Thu)11:19:41</span> <span class="postNum desktop"><a href="thread/47191619#p47204641" title="Link to this post">No.</a><a href="thread/47191619#q47204641" title="Reply to this post">47204641</a></span><a href="#" class="postMenuBtn" title="Post menu" data-cmd="post-menu">▶</a></div>
+            <blockquote class="postMessage" id="m47204641"><a href="/g/thread/47191619#p47191931" class="quotelink">&gt;&gt;47191931</a>
+              <br>But it isn't.
+              <br>
+              <br><a href="/g/thread/47191619#p47192333" class="quotelink">&gt;&gt;47192333</a>
+              <br>You got to be shitting me.
+              <br>
+              <br><a href="/g/thread/47191619#p47195106" class="quotelink">&gt;&gt;47195106</a>
+              <br>Fucking hilarious.</blockquote>
+          </div>
+        </div>
+        <div class="postContainer replyContainer" id="pc47204788">
+          <div class="sideArrows" id="sa47204788">&gt;&gt;</div>
+          <div id="p47204788" class="post reply">
+            <div class="postInfoM mobile" id="pim47204788"><span class="nameBlock"><span class="name">Anonymous</span>
+              <br>
+              </span><span class="dateTime postNum" data-utc="1427362689">03/26/15(Thu)05:38:09 <a href="thread/47191619#p47204788" title="Link to this post">No.</a><a href="thread/47191619#q47204788" title="Reply to this post">47204788</a></span></div>
+            <div class="postInfo desktop" id="pi47204788">
+              <input type="checkbox" name="47204788" value="delete"> <span class="nameBlock"><span class="name">Anonymous</span> </span> <span class="dateTime" data-utc="1427362689">03/26/15(Thu)11:38:09</span> <span class="postNum desktop"><a href="thread/47191619#p47204788" title="Link to this post">No.</a><a href="thread/47191619#q47204788" title="Reply to this post">47204788</a></span><a href="#" class="postMenuBtn" title="Post menu" data-cmd="post-menu">▶</a></div>
+            <blockquote class="postMessage" id="m47204788"><a href="/g/thread/47191619#p47191619" class="quotelink">&gt;&gt;47191619 (OP)</a>
+              <br>Hold on, I am not American. Why would an electronic store ask for your personal data?</blockquote>
+          </div>
+        </div>
+        <div class="postContainer replyContainer" id="pc47205089">
+          <div class="sideArrows" id="sa47205089">&gt;&gt;</div>
+          <div id="p47205089" class="post reply">
+            <div class="postInfoM mobile" id="pim47205089"><span class="nameBlock"><span class="name">Anonymous</span>
+              <br>
+              </span><span class="dateTime postNum" data-utc="1427364724">03/26/15(Thu)06:12:04 <a href="thread/47191619#p47205089" title="Link to this post">No.</a><a href="thread/47191619#q47205089" title="Reply to this post">47205089</a></span></div>
+            <div class="postInfo desktop" id="pi47205089">
+              <input type="checkbox" name="47205089" value="delete"> <span class="nameBlock"><span class="name">Anonymous</span> </span> <span class="dateTime" data-utc="1427364724">03/26/15(Thu)12:12:04</span> <span class="postNum desktop"><a href="thread/47191619#p47205089" title="Link to this post">No.</a><a href="thread/47191619#q47205089" title="Reply to this post">47205089</a></span><a href="#" class="postMenuBtn" title="Post menu" data-cmd="post-menu">▶</a></div>
+            <blockquote class="postMessage" id="m47205089"><a href="/g/thread/47191619#p47192134" class="quotelink">&gt;&gt;47192134</a>
+              <br>lol</blockquote>
+          </div>
+        </div>
+      </div>
+
+
+    </div>{{-- .container-fluid --}}
+
+  </body>
+</html>
