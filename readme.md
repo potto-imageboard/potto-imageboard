@@ -19,7 +19,7 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 ## Contributing
 
-Please pull a PR if you would like to contribute.
+Please do a PR if you would like to contribute.
 
 ### License
 
